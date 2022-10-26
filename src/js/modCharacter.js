@@ -9,24 +9,21 @@ const damageDistance = {
 };
 
 export default class ModCharacter extends Character {
-  constructor(name, type, attack, defence, health, level, stoned = false, distance = 1) {
+  constructor(name, type, attack, defence, health, level, distance = 1, stoned = false) {
     super(name, type, attack, defence, health, level);
-    this.stoned = stoned;
     this.distance = distance;
+    this.stoned = stoned;
   }
 
-  set valAttack(val) {
-    super.attack = val;
+  set valAttack(distance) {
+    this.attack *= damageDistance[distance];
+    if (this.stoned === true) {
+      this.attack -= Math.log2(this.distance) * 5;
+    }
   }
 
   get valAttack() {
-    let newAttack = this.attack;
-    newAttack -= newAttack * damageDistance[this.distance];
-
-    if (this.stoned) {
-      newAttack -= Math.log2(this.distance) * 5;
-    }
-    return Math.floor(newAttack);
+    return this.attack;
   }
 
   set valStoned(val) {
