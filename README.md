@@ -1,4 +1,4 @@
-# Домашнее задание к лекции «`ArrayBuffer`»
+# Домашнее задание к лекции «`ArrayBuffer`» [![Build status](https://ci.appveyor.com/api/projects/status/motgn6f9drh6ysy2?svg=true)](https://ci.appveyor.com/project/bas27/fpyajs-math)
 
 **Важно**: каждая задача выполняется в виде отдельного проекта с собственным GitHub репозиторием.
 
