@@ -1,5 +1,4 @@
 import Character from '../js/character';
-import Daemon from '../js/daemon';
 
 describe('Создание персонажа', () => {
   test('проверка характеристик', () => {
@@ -38,7 +37,7 @@ describe('Создание персонажа', () => {
 
   test('проверка длины имени более 10', () => {
     try {
-      const recived = new Daemon('Qwertyasdfg');
+      const recived = new Character('Qwertyasdfg', 'Daemon', 25, 25, 100, 1);
       const expected = {
         name: 'Qwertyasdfg',
         type: 'Daemon',
@@ -55,7 +54,7 @@ describe('Создание персонажа', () => {
 
   test('проверка типа поля name', () => {
     try {
-      const recived = new Daemon(456);
+      const recived = new Character(456, 'Daemon', 25, 25, 100, 1);
       const expected = {
         name: 456,
         type: 'Daemon',
@@ -72,7 +71,7 @@ describe('Создание персонажа', () => {
 
   test('проверка типа персонажа', () => {
     try {
-      const recived = new Daemon('Tady', 'Boy');
+      const recived = new Character('Tady', 'Boy', 25, 25, 100, 1);
       const expected = {
         name: 'Tady',
         type: 'Boy',

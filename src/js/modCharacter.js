@@ -1,4 +1,4 @@
-import Character from './character.js';
+import Character from './character';
 
 const damageDistance = {
   1: 1,
@@ -15,8 +15,9 @@ export default class ModCharacter extends Character {
     this.stoned = stoned;
   }
 
-  set valAttack(distance) {
-    this.attack *= damageDistance[distance];
+  set valAttack(val) {
+    this.distance = val;
+    this.attack *= damageDistance[this.distance];
     if (this.stoned === true) {
       this.attack -= Math.log2(this.distance) * 5;
     }
