@@ -18,12 +18,12 @@ export default class ModCharacter extends Character {
   set valAttack(val) {
     this.distance = val;
     this.attack *= damageDistance[this.distance];
-    if (this.stoned === true) {
-      this.attack -= Math.log2(this.distance) * 5;
-    }
   }
 
   get valAttack() {
+    if (this.stoned === true) {
+      this.attack -= Math.log2(this.distance) * 5;
+    }
     return this.attack;
   }
 
